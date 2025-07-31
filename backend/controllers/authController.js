@@ -42,8 +42,8 @@ export const SignUp = async (req, res) => {
             res.cookie("token", token, {
                 httpOnly: true,
                 maxAge: 7 * 24 * 60 * 60 * 1000,
-                sameSite: "None",
-                secure: true
+                sameSite: "strict",
+                secure: false 
             })
             return res.json({ success: true, message: "User Successfully Created!", token, newUser })
 
@@ -75,8 +75,8 @@ export const LogIn = async (req, res) => {
             res.cookie("token", token, {
                 httpOnly: true,
                 maxAge: 7 * 24 * 60 * 60 * 1000,
-               sameSite: "None",
-                secure: true
+               sameSite: "strict",
+                secure: false 
             })
             return res.json({ success: true, message: "User Successfully logIn!", token, existUser })
 
